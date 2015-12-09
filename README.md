@@ -1,7 +1,7 @@
 # GHCJS Performance Problems
 
 This repo demonstrates significant GHCJS build performance problems with
-TemplateHaskell.  There are three modules which differ in very small ways but
+TemplateHaskell.  There are four modules which differ in very small ways but
 have very different build times.  Here are the results:
 
     $ time ghcjs --make src/ThPerf1.hs
