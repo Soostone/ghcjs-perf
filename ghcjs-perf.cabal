@@ -13,26 +13,17 @@ library
   hs-source-dirs: src
   build-depends: 
     base,
-    reflex,
     ghcjs-dom == 0.1.*,
+    mtl,
+    raw-strings-qq,
+    reflex,
     reflex-dom,
-    containers,
-    file-embed,
-    text,
-    mtl
+    text
   exposed-modules:
     ThPerf1
     ThPerf2
+    ThPerf3
   other-extensions: TemplateHaskell
   ghc-prof-options: -fprof-auto
   ghc-options:  -Wall -fwarn-tabs -funbox-strict-fields -O2
 
-executable ghcjs-perf
-  hs-source-dirs: src-bin
-  main-is: main.hs
-  build-depends:
-    base,
-    ghcjs-perf
-  other-extensions: TemplateHaskell
-  ghc-prof-options: -fprof-auto
-  ghc-options: -threaded -Wall -fwarn-tabs -funbox-strict-fields -O2

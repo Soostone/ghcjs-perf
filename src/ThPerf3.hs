@@ -1,4 +1,7 @@
-module ThPerf1 where
+{-# LANGUAGE GADTs       #-}
+{-# LANGUAGE QuasiQuotes #-}
+
+module ThPerf3 where
 
 ------------------------------------------------------------------------------
 import           Reflex
@@ -14,7 +17,7 @@ data Foo = Foo
     }
 
 mkFoo :: (String, Bool) -> Int -> Foo
-mkFoo (s,b) i = Foo "thename" s b (i*10)
+mkFoo p i = Foo "thename" (fst p) (snd p) (i*10)
 
 testFunc
     :: (Monad m, Reflex t, MonadHold t m)
@@ -23,6 +26,5 @@ testFunc
     -> Dynamic t Int
     -> m (Dynamic t Foo)
 testFunc s b i = do
-    pair <- combineDyn (,) s b
-    combineDyn mkFoo pair i
+    [mkDyn| mkFoo ($s, $b) $i |]
 
