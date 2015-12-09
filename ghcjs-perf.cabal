@@ -1,0 +1,38 @@
+Name: ghcjs-perf
+Version: 0.1
+Synopsis: ghcjs performance example
+Description: ghcjs performance example
+License: BSD3
+Author: Doug Beardsley
+Stability: Experimental
+Category: FRP
+Build-type: Simple
+Cabal-version: >=1.8
+
+library
+  hs-source-dirs: src
+  build-depends: 
+    base,
+    reflex,
+    ghcjs-dom == 0.1.*,
+    reflex-dom,
+    containers,
+    file-embed,
+    text,
+    mtl
+  exposed-modules:
+    ThPerf1
+    ThPerf2
+  other-extensions: TemplateHaskell
+  ghc-prof-options: -fprof-auto
+  ghc-options:  -Wall -fwarn-tabs -funbox-strict-fields -O2
+
+executable ghcjs-perf
+  hs-source-dirs: src-bin
+  main-is: main.hs
+  build-depends:
+    base,
+    ghcjs-perf
+  other-extensions: TemplateHaskell
+  ghc-prof-options: -fprof-auto
+  ghc-options: -threaded -Wall -fwarn-tabs -funbox-strict-fields -O2
