@@ -1,0 +1,29 @@
+# GHCJS Performance Problems
+
+This repo demonstrates significant GHCJS build performance problems with
+TemplateHaskell.  There are three modules which differ in very small ways but
+have very different build times.  Here are the results:
+
+    $ time ghcjs --make src/ThPerf1.hs
+    [1 of 1] Compiling ThPerf1          ( src/ThPerf1.hs, src/ThPerf1.js_o )
+
+    real    0m0.961s
+    user    0m0.885s
+    sys     0m0.073s
+
+    $ time ghcjs --make src/ThPerf2.hs
+    [1 of 1] Compiling ThPerf2          ( src/ThPerf2.hs, src/ThPerf2.js_o )
+    Linking Template Haskell (ThRunner1)
+
+    real    0m4.058s
+    user    0m4.148s
+    sys     0m0.730s
+
+    $ time ghcjs --make src/ThPerf3.hs
+    [1 of 1] Compiling ThPerf3          ( src/ThPerf3.hs, src/ThPerf3.js_o )
+    Linking Template Haskell (ThRunner1)
+
+    real    0m29.852s
+    user    0m26.385s
+    sys     0m5.246s
+
