@@ -27,3 +27,11 @@ have very different build times.  Here are the results:
     user    0m26.385s
     sys     0m5.246s
 
+    $ time ghcjs --make src/ThPerf4.hs                                                                                                                                                                                                                                                
+    [1 of 1] Compiling ThPerf4          ( src/ThPerf4.hs, src/ThPerf4.js_o )
+    Linking Template Haskell (ThRunner1)
+    
+    real    0m6.356s
+    user    0m6.496s
+    sys     0m1.037s
+

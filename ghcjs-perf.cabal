@@ -23,6 +23,7 @@ library
     ThPerf1
     ThPerf2
     ThPerf3
+    ThPerf4
   other-extensions: TemplateHaskell
   ghc-prof-options: -fprof-auto
   ghc-options:  -Wall -fwarn-tabs -funbox-strict-fields -O2
