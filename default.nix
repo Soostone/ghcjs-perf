@@ -1,4 +1,12 @@
-{ mkDerivation, reflex, reflex-dom, file-embed
+{ mkDerivation
+, file-embed
+, ghcjs-dom
+, mtl
+, raw-strings-qq
+, reflex
+, reflex-dom
+, syb
+, text
 }:
 
 mkDerivation {
@@ -8,9 +16,14 @@ mkDerivation {
   isExecutable = true;
   isLibrary = true;
   buildDepends = [
+    file-embed
+    ghcjs-dom
+    mtl
+    raw-strings-qq
     reflex
     reflex-dom
-    file-embed
+    syb
+    text
   ];
   license = null;
 }
