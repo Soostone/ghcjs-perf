@@ -35,3 +35,12 @@ have very different build times.  Here are the results:
     user    0m6.496s
     sys     0m1.037s
 
+    $ time ghcjs --make -isrc ThPerf5 -fforce-recomp
+
+    [1 of 2] Compiling ThPerf5.QQ       ( src/ThPerf5/QQ.hs, src/ThPerf5/QQ.js_o )
+    [2 of 2] Compiling ThPerf5          ( src/ThPerf5.hs, src/ThPerf5.js_o )
+    Linking Template Haskell (ThPerf5.QQ,ThRunner1)
+
+    real	0m8.635s
+    user	0m7.639s
+    sys	0m1.663s
